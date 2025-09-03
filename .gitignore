@@ -1,0 +1,19 @@
+# Node.js
+node_modules/
+dist/
+
+# IDE
+.idea/
+.DS_Store
+
+# Capacitor / Xcode
+ios/Pods/
+ios/build/
+*.xcworkspace
+*.xcuserstate
+
+# GitHub workflows разрешаем
+!.github/
+!.github/workflows/
+!.github/workflows/*.yml
+
