@@ -2,22 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  html,body,#root{height:100%}
-  body{
-    @apply text-slate-100 bg-bg;
-    background:
-      radial-gradient(1200px 800px at 80% -200px,#1d2330 0%,#0b0d12 60%),
-      radial-gradient(900px 600px at -200px 50%,#141a22 0%,#0b0d12 60%);
-  }
+@layer base {
+    :root { color-scheme: dark; }
+    body { @apply bg-zinc-950 text-zinc-100; }
 }
 
-@layer components{
-  .glass{ @apply bg-white/5 border border-white/10 rounded-xl shadow-glass backdrop-blur; }
-  .btn{ @apply inline-flex items-center justify-center rounded-lg px-4 py-2 font-semibold transition; }
-  .btn-primary{ @apply btn bg-accent text-white hover:brightness-110 shadow-[0_8px_24px_rgba(124,92,255,.35)]; }
-  .btn-ghost{ @apply btn bg-surface border border-white/10 text-slate-100; }
-  .input{ @apply w-full bg-surface border border-white/10 rounded-lg px-3 py-2 outline-none focus:ring-4 ring-accent/30; }
-  .card{ @apply glass p-4; }
-  .title{ @apply text-xl font-extrabold mb-3; }
+@layer utilities {
+    .shadow-glass { box-shadow: 0 10px 30px rgba(0,0,0,.35) }
+}
+
+@layer components {
+    .glass { @apply bg-white/5 border border-white/10 rounded-2xl shadow-glass backdrop-blur; }
+    .card { @apply glass p-5; }
+    .title { @apply text-xl font-extrabold mb-3; }
+
+    .btn        { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold transition; }
+    .btn-primary{ @apply btn bg-indigo-500 text-white hover:brightness-110; }
+    .btn-ghost  { @apply btn bg-white/5 border border-white/10 text-zinc-100 hover:bg-white/10; }
+    .input      { @apply w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 outline-none focus:ring-4 ring-indigo-500/30; }
 }
