@@ -1,11 +1,9 @@
+// vite.config.mjs
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
     plugins: [react()],
-    base: '/EventPlanner/',
-    build: {
-        outDir: 'dist',
-        sourcemap: true
-    },
-})
+    base: mode === 'production' ? '/EventPlanner/' : '/',
+    build: { outDir: 'dist', sourcemap: true },
+}))

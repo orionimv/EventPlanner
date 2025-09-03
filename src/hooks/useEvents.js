@@ -49,6 +49,44 @@
 //                 (snap) => {
 //                     const arr = snap.docs.map((d) => ({ id: d.id, ...d.data() }))
 //                     setEvents(arr)
+//                     localforage.setItem(EVENTS_CACHE_KEY, arr).catch(() => {})
+//                     setLoading(false)
+//                 },
+//                 (e) => {
+//                     console.error(e)
+//                     setError(e.message)
+//                     setLoading(false)
+//                 }
+//             )
+//         }
+//
+//         init()
+//
+//         return () => unsub()
+//     }, [userId]) // можно добавить q сюда, но тогда нужно вынести q вне useEffect
+//
+//     const addEvent = useCallback(
+//         async (ev) => {
+//             await addDoc(collection(db, 'events'), {
+//                 ...ev,
+//                 createdAt: serverTimestamp()
+//             })
+//         },
+//         []
+//     )
+//
+//     const updateEvent = useCallback(async (id, data) => {
+//         await updateDoc(doc(db, 'events', id), data)
+//     }, [])
+//
+//     const removeEvent = useCallback(async (id) => {
+//         await deleteDoc(doc(db, 'events', id))
+//     }, [])
+//
+//     return { events, loading, error, addEvent, updateEvent, removeEvent }
+// }
+
+import { useEffect, useState, useCallback, useMemo } from 'react'
 import { db } from '../firebase.js'
 import {
     collection,
@@ -90,12 +128,14 @@ export function useEvents(userId) {
         let cancelled = false
 
         ;(async () => {
+
             try {
                 const cached = await localforage.getItem(cacheKey)
                 if (!cancelled && cached) setEvents(cached)
             } catch (e) {
                 console.warn('cache read', e)
             }
+
 
             try {
                 unsub = onSnapshot(

@@ -1,7 +1,10 @@
-// src/main.jsx
-import './index.css'           // ← обязательно
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'   // 👈 берём именно createRoot
+import { HashRouter } from 'react-router-dom'
 import App from './App.jsx'
+import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+createRoot(document.getElementById('root')).render(
+    <HashRouter>
+        <App />
+    </HashRouter>
+)
