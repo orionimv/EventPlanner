@@ -2,26 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== База (тёмная тема) ===== */
 @layer base {
     :root { color-scheme: dark; }
 
     html, body, #root { min-height: 100%; }
 
-    /* Было: text-zinc-100 — слишком тускло на некоторых дисплеях */
     body { @apply bg-zinc-950 text-white; }
 
-    /* Читабельные ссылки и плейсхолдеры */
     a { @apply text-indigo-400 hover:text-indigo-300; }
     ::placeholder { @apply text-zinc-400; }
 }
 
-/* ===== Утилиты ===== */
 @layer utilities {
     .shadow-glass { box-shadow: 0 10px 30px rgba(0,0,0,.35); }
 }
 
-/* ===== Компоненты ===== */
 @layer components {
     .glass { @apply bg-white/5 border border-white/10 rounded-2xl shadow-glass backdrop-blur; }
     .card  { @apply glass p-5; }

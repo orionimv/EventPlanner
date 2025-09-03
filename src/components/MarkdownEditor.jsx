@@ -1,39 +1,3 @@
-// import React, { useState } from 'react'
-// import ReactMarkdown from 'react-markdown'
-// // опционально: import remarkGfm from 'remark-gfm' и rehype-sanitize для безопасности
-//
-// export default function MarkdownEditor({ value, onChange }) {
-//     const [tab, setTab] = useState('edit')
-//
-//     return (
-//         <div style={{ border: '1px solid #e5e7eb', borderRadius: 12, overflow: 'hidden' }}>
-//             <div style={{ display:'flex', gap: 8, padding: 8, background:'#f9fafb' }}>
-//                 <button type="button" onClick={() => setTab('edit')} disabled={tab === 'edit'}>
-//                     Редактор
-//                 </button>
-//                 <button type="button" onClick={() => setTab('preview')} disabled={tab === 'preview'}>
-//                     Предпросмотр
-//                 </button>
-//             </div>
-//
-//             {tab === 'edit' ? (
-//                 <textarea
-//                     style={{ width: '100%', minHeight: 120, padding: 12, border: 0, outline:'none' }}
-//                     value={value}
-//                     onChange={(e) => onChange(e.target.value)}
-//                     placeholder="Описание в Markdown..."
-//                 />
-//             ) : (
-//                 <div style={{ padding: 12 }}>
-//                     <ReactMarkdown>
-//                         {value?.trim() || '*Пока пусто...*'}
-//                     </ReactMarkdown>
-//                 </div>
-//             )}
-//         </div>
-//     )
-// }
-
 import React, { useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 

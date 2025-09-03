@@ -13,7 +13,6 @@ export default function Login() {
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
 
-    // вход по email/паролю
     const handleLogin = async () => {
         setError(null)
         try {
@@ -25,7 +24,6 @@ export default function Login() {
         }
     }
 
-    // регистрация (если надо)
     const handleRegister = async () => {
         setError(null)
         try {
@@ -37,7 +35,6 @@ export default function Login() {
         }
     }
 
-    // вход через Google (только redirect в WebView!)
     const handleGoogleLogin = async () => {
         setError(null)
         const provider = new GoogleAuthProvider()
@@ -49,7 +46,6 @@ export default function Login() {
         }
     }
 
-    // результат после redirect (например, в useEffect в App.jsx)
     React.useEffect(() => {
         getRedirectResult(auth)
             .then((res) => {
