@@ -1,23 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body { background: #0b0b0b; color: #ffffff; }
+/*@layer base {*/
+/*    :root { color-scheme: dark; }*/
+/*    body { @apply bg-zinc-950 text-zinc-100; }*/
+/*}*/
 
-@layer base {
-    :root { color-scheme: dark; }
-    body { @apply bg-zinc-950 text-zinc-100; }
-}
+/*@layer utilities {*/
+/*    .shadow-glass { box-shadow: 0 10px 30px rgba(0,0,0,.35) }*/
+/*}*/
 
-@layer utilities {
-    .shadow-glass { box-shadow: 0 10px 30px rgba(0,0,0,.35) }
-}
+/*@layer components {*/
+/*    .glass { @apply bg-white/5 border border-white/10 rounded-2xl shadow-glass backdrop-blur; }*/
+/*    .card { @apply glass p-5; }*/
+/*    .title { @apply text-xl font-extrabold mb-3; }*/
 
-@layer components {
-    .glass { @apply bg-white/5 border border-white/10 rounded-2xl shadow-glass backdrop-blur; }
-    .card { @apply glass p-5; }
-    .title { @apply text-xl font-extrabold mb-3; }
-
-    .btn        { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold transition; }
-    .btn-primary{ @apply btn bg-indigo-500 text-white hover:brightness-110; }
-    .btn-ghost  { @apply btn bg-white/5 border border-white/10 text-zinc-100 hover:bg-white/10; }
-    .input      { @apply w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 outline-none focus:ring-4 ring-indigo-500/30; }
-}
+/*    .btn        { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold transition; }*/
+/*    .btn-primary{ @apply btn bg-indigo-500 text-white hover:brightness-110; }*/
+/*    .btn-ghost  { @apply btn bg-white/5 border border-white/10 text-zinc-100 hover:bg-white/10; }*/
+/*    .input      { @apply w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 outline-none focus:ring-4 ring-indigo-500/30; }*/
+/*}*/
