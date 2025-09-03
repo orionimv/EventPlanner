@@ -3,9 +3,10 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
     plugins: [react()],
-    base: '',
+    base: '/EventPlanner/',
     build: {
         outDir: 'dist',
         sourcemap: true
     },
 })
+
