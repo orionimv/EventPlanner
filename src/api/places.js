@@ -46,6 +46,7 @@ export async function getNearbyPlaces({
     const API_KEY = import.meta.env.VITE_GOOGLE_PLACES_API_KEY;
     if (!API_KEY) throw new Error('Нет VITE_GOOGLE_PLACES_API_KEY');
 
+    // radius: метры, разумные границы
     const r = Math.max(50, Math.min(Number(radius) || 2000, 50000));
 
     // Чуть подробней field mask
@@ -87,6 +88,7 @@ export async function getNearbyPlaces({
                     radius: r
                 }
             }
+            // rankPreference часто игнорят/меняют — оставим дефолт
         };
 
     const res = await fetch(url, {

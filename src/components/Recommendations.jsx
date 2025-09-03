@@ -136,6 +136,7 @@ function Recommendations({ coords }) {
                 <div className="mb-3">
                     <h3 className="font-semibold mb-1">Погода</h3>
                     <p className="text-sm text-slate-200">
+                        {/* город, если вернулся */}
                         {weather?.name ? `${weather.name}: ` : null}
                         {Number.isFinite(weather?.main?.temp) ? Math.round(weather.main.temp) : "—"}°C
                         {", "}

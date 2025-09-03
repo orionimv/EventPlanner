@@ -1,3 +1,54 @@
+// import { useEffect, useState, useCallback } from 'react'
+// import { db } from '../firebase.js'
+// import {
+//     collection,
+//     addDoc,
+//     onSnapshot,
+//     query,
+//     orderBy,
+//     where,
+//     serverTimestamp,
+//     updateDoc,
+//     doc,
+//     deleteDoc
+// } from 'firebase/firestore'
+// import localforage from 'localforage'
+//
+// const EVENTS_CACHE_KEY = 'events_cache_v1'
+//
+// export function useEvents(userId) {
+//     const [events, setEvents] = useState([])
+//     const [loading, setLoading] = useState(true)
+//     const [error, setError] = useState(null)
+//
+//     useEffect(() => {
+//         setLoading(true)
+//         setError(null)
+//
+//         const q = userId
+//             ? query(
+//                 collection(db, 'events'),
+//                 where('participants', 'array-contains', userId),
+//                 orderBy('start')
+//             )
+//             : query(collection(db, 'events'), orderBy('start'))
+//
+//         let unsub = () => {}
+//
+//         async function init() {
+//             // пробуем загрузить кеш
+//             try {
+//                 const cached = await localforage.getItem(EVENTS_CACHE_KEY)
+//                 if (cached) setEvents(cached)
+//             } catch (e) {
+//                 console.warn('cache read', e)
+//             }
+//
+//             unsub = onSnapshot(
+//                 q,
+//                 (snap) => {
+//                     const arr = snap.docs.map((d) => ({ id: d.id, ...d.data() }))
+//                     setEvents(arr)
 import { db } from '../firebase.js'
 import {
     collection,

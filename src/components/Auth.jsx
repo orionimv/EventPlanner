@@ -1,3 +1,4 @@
+// src/components/Auth.jsx
 import React, { useState } from 'react'
 
 export default function Auth({ onEmailLogin, onEmailRegister, onGoogle }) {
